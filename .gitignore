@@ -28,5 +28,32 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+
+.env
+# next.js
+/.next/
+/out/
+
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# storybook log
+*-storybook.log
+storybook-static
+
 # turbo
 .turbo
