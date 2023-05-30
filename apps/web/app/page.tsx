@@ -1,10 +1,11 @@
-import { Button, Header } from "ui";
+import { Button, Header } from 'ui';
 
 export default function Page() {
+  var dd = '';
   return (
     <>
       <Header text="Web" />
-      <Button />
+      <Button text={'Web'} />
     </>
   );
 }

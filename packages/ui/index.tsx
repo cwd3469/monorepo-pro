@@ -1,6 +1,3 @@
-import * as React from "react";
-
-// component exports
-export * from "./Button";
-export * from "./Header";
-export * from './buttons/WButton'
+import * as React from 'react';
+export * from './Button';
+export * from './Header';
