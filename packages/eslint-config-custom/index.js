@@ -5,13 +5,13 @@ module.exports = {
     amd: true,
   },
   extends: [
-    'next',
     'turbo',
     'prettier',
     'next/core-web-vitals',
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'next',
   ],
   plugins: ['react', '@typescript-eslint'],
   parserOptions: {
