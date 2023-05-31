@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { Input } from '@mui/material';
+import { Input, styled } from '@mui/material';
 
-export const TestInput = () => {
-  return <Input />;
-};
+export const TestInput = styled(Input)(({ theme }) => ({}));
