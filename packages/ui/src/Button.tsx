@@ -1,5 +1,3 @@
-'use client';
-import * as React from 'react';
 export const Button = (props: { text?: string }) => {
   const { text } = props;
   const anm: any = '';
