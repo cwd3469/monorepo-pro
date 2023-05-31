@@ -1,11 +1,12 @@
-import { Button, Header } from 'ui';
+'use client';
+import { Button, Header, TestInput } from 'ui/src';
 
 export default function Page() {
-  var dd = '';
   return (
     <>
       <Header text="Web" />
       <Button text={'Web'} />
+      <TestInput />
     </>
   );
 }

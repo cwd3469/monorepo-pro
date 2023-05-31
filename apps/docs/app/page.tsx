@@ -1,4 +1,5 @@
-import { Button, Header } from 'ui';
+'use client';
+import { Button, Header } from 'ui/src';
 
 export default function Page() {
   return (
