@@ -1,13 +1,9 @@
-/* eslint-disable turbo/no-undeclared-env-vars */
+// If you want to use other PostCSS plugins, see the following:
+// https://tailwindcss.com/docs/using-with-preprocessors
+
 module.exports = {
   plugins: {
-    'postcss-import': {},
-    'tailwindcss/nesting': 'postcss-nesting',
     tailwindcss: {},
     autoprefixer: {},
-    'postcss-preset-env': {
-      features: { 'nesting-rules': false },
-    },
-    ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {}),
   },
 };
