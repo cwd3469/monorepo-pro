@@ -1,9 +1,7 @@
+import { WSigninContainer } from 'ui';
+
 const SigninPage = () => {
-  return (
-    <div>
-      SigninPage 
-    </div>
-  );
-}
+  return <WSigninContainer />;
+};
 
 export default SigninPage;
