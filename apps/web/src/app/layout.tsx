@@ -9,8 +9,8 @@ export default function RootLayout({
 }) {
   let d = '';
   return (
-    <html lang="en" className="bg-zinc-900">
-      <body>{children}</body>
+    <html lang="en" className="h-full bg-gray-50">
+      <body className="h-full">{children}</body>
     </html>
   );
 }
