@@ -1,3 +1,9 @@
-import sharedConfig from 'tailwind-config/tailwind.config.js';
+/** @type {import('tailwindcss').Config} */
 
-export const presets = [sharedConfig];
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const sharedConfig = require('tailwind-config');
+
+module.exports = {
+  ...sharedConfig,
+  content: ['./**/*.{js,ts,jsx,tsx,mdx}'],
+};
