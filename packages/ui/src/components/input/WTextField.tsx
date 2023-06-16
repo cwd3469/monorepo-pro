@@ -1,39 +1,26 @@
 'use client';
-import clsx from 'clsx';
-import { Input, InputProps } from './index';
-import { useEffect } from 'react';
-
-interface TextFieldMsgPrope {
-  error?: string;
-  helper?: string;
-}
-type WTextFieldProps = InputProps & TextFieldMsgPrope;
-
-const TextFieldMsg = (props: TextFieldMsgPrope) => {
-  const { error, helper } = props;
-  const isMsg = typeof error === 'string' || typeof helper === 'string';
-  if (!isMsg) return <></>;
-  return (
-    <p className="text-muted-foreground text-sm">{error ? error : helper}</p>
-  );
-};
+import { Input } from './index';
+import { InputErrorMsgValidation } from './validation/InputErrorMsg.validation';
+import { WTextFieldProps } from './types/Input.type';
+import { InputTextValidation } from './validation/inputText.validation';
 
 const WTextField = (props: WTextFieldProps) => {
   const { error, helper } = props;
-  const isError = typeof error === 'string';
-  const isHelper = typeof helper === 'string';
-  const twClass = clsx({
-    'border-red-300	': isError,
-    'border-blue-300	': isHelper,
-    'border-2': true,
-  });
-  useEffect(() => {
-    console.log(twClass);
-  }, [twClass]);
+  const inputMsg = new InputErrorMsgValidation({ error, helper });
+  const { inputActive, inputMsgActive } = inputMsg.classNameFn();
+  const msg = inputMsg.msgFn();
+  const defaultClass = 'border-2';
+
+  const valid = new InputTextValidation({ case: 'account' });
+
   return (
-    <div className="grid w-full max-w-sm items-center gap-1.5">
-      <Input {...props} className={twClass} />
-      <TextFieldMsg {...props} />
+    <div className="grid w-full max-w-sm items-center">
+      <Input {...props} className={inputActive + defaultClass} />
+      <p
+        className={`wa-input-msg text-muted-foreground text-sm ${inputMsgActive} h-6`}
+      >
+        {msg}
+      </p>
     </div>
   );
 };

@@ -2,7 +2,7 @@ interface WSigninContainerProps {
   children: React.ReactNode | React.ReactNode[];
 }
 
-export function WSigninContainer(props: WSigninContainerProps) {
+export function WSigninLayout(props: WSigninContainerProps) {
   const { children } = props;
   return (
     <>
