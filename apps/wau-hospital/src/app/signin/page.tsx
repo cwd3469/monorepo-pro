@@ -1,22 +1,23 @@
 import { NextPage } from 'next';
 import { WSigninLayout, LOGO_LIST } from 'ui';
 import Image from 'next/image';
-import SigninPage from '../../presentational/auth/signin/views/SigninPage';
+import SigninTemplate from '../../presentational/auth/signin/views/SigninTemplate';
+
 export const metadata = {
   title: '어디아파 병원 - 로그인',
   description: '어디아파 병원 - 로그인',
 };
 
-const Signin: NextPage = () => {
+const SigninPage: NextPage = () => {
   return (
     <WSigninLayout>
       <Image
         src={LOGO_LIST['signinHospitalLogo']}
         alt={'어디아파 로그인 페이지 로고'}
       />
-      <SigninPage />
+      <SigninTemplate />
     </WSigninLayout>
   );
 };
 
-export default Signin;
+export default SigninPage;
