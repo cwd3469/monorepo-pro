@@ -9,7 +9,14 @@
   },
   "devDependencies": {
     "eslint-config-custom": "*",
-    "tsconfig": "*",
-    "tailwind-config": "*"
+    "tailwind-config": "*",
+    "tsconfig": "*"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.1.1",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "react-hook-form": "^7.45.1",
+    "zod": "^3.21.4"
   }
 }
