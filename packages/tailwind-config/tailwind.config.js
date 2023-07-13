@@ -57,6 +57,9 @@ module.exports = {
       },
     },
     extend: {
+      gap: {
+        15: '3.750em',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
