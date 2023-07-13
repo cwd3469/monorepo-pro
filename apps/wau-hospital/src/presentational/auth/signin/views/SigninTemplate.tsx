@@ -22,6 +22,9 @@ const formSchema = z.object({
   password: z.string().min(2, {
     message: 'Username must be at least 2 characters.',
   }),
+  hospitalCode: z.string().min(2, {
+    message: 'Username must be at least 2 characters.',
+  }),
 });
 
 const SigninTemplate = () => {
@@ -30,6 +33,7 @@ const SigninTemplate = () => {
     defaultValues: {
       username: '',
       password: '',
+      hospitalCode: '',
     },
   });
 
@@ -41,15 +45,31 @@ const SigninTemplate = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
+        <FormField
+          control={form.control}
+          name="hospitalCode"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>요양기관번호</FormLabel>
+              <FormControl>
+                <Input placeholder="숫자 8자리 입력해 주세요." {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>아이디</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input
+                  placeholder="4자 이상의 영문 소문자 또는 숫자를 입력해 주세요."
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -60,9 +80,13 @@ const SigninTemplate = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>password</FormLabel>
+              <FormLabel>비밀번호</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input
+                  placeholder="영문 대소문자,숫자,특수문자 중 3종류 이상 포함해 주세요."
+                  type="password"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

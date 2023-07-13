@@ -89,10 +89,18 @@ const FormLabel = React.forwardRef<
 >(({ className, ...props }, ref) => {
   const { error, formItemId } = useFormField();
 
+  const inputMsgActive = cn(
+    {
+      'text-destructive': error,
+      'text-lg font-semibold': true,
+    },
+    className,
+  );
+
   return (
     <Label
       ref={ref}
-      className={cn(error && 'text-destructive', className)}
+      className={inputMsgActive}
       htmlFor={formItemId}
       {...props}
     />
@@ -147,19 +155,21 @@ const FormMessage = React.forwardRef<
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message) : children;
 
-  if (!body) {
-    return null;
-  }
-
   return (
-    <p
-      ref={ref}
-      id={formMessageId}
-      className={cn('text-destructive text-sm font-medium', className)}
-      {...props}
-    >
-      {body}
-    </p>
+    <div className="h-4">
+      {!body ? (
+        <></>
+      ) : (
+        <p
+          ref={ref}
+          id={formMessageId}
+          className={cn('text-destructive text-sm font-medium', className)}
+          {...props}
+        >
+          {body}
+        </p>
+      )}
+    </div>
   );
 });
 FormMessage.displayName = 'FormMessage';
