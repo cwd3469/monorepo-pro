@@ -16,13 +16,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: 'Username must be at least 2 characters.',
+  hospitalCode: z.string().max(8, {
+    message: '해당 병원의 요양기관번호 8자리를 입력해 주세요.',
   }),
+  username: z.string().min(1, { message: 'This field has to be filled' }),
   password: z.string().min(2, {
-    message: 'Username must be at least 2 characters.',
-  }),
-  hospitalCode: z.string().min(2, {
     message: 'Username must be at least 2 characters.',
   }),
 });
@@ -31,9 +29,9 @@ const SigninTemplate = () => {
   const form: any = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      hospitalCode: '',
       username: '',
       password: '',
-      hospitalCode: '',
     },
   });
 
@@ -45,7 +43,7 @@ const SigninTemplate = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
         <FormField
           control={form.control}
           name="hospitalCode"
@@ -92,6 +90,7 @@ const SigninTemplate = () => {
             </FormItem>
           )}
         />
+        <div className="h-4" />
         <FormButton type="submit" variant="default">
           로그인
         </FormButton>
