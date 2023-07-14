@@ -92,7 +92,9 @@ const SigninTemplate = () => {
             </FormItem>
           )}
         />
-        <FormButton type="submit">로그인</FormButton>
+        <FormButton type="submit" variant="default">
+          로그인
+        </FormButton>
       </form>
     </Form>
   );

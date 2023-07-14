@@ -5,7 +5,8 @@
   "compilerOptions": {
     "paths": {
       "@/components": ["./src/components/*"],
-      "@/lib": ["./src/lib/utils.ts"]
+      "@/lib": ["./src/lib/utils.ts"],
+      "@/styles": ["./src/style.css"]
     }
   }
 }
