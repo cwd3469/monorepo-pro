@@ -1,0 +1,14 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-custom": "*",
+    "tailwind-config": "*",
+    "tsconfig": "*"
+  }
+}
