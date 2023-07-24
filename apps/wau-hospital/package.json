@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "ui": "*",
+    "utils": "*",
     "tailwind-config": "*"
   },
   "devDependencies": {
